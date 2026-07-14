@@ -1,5 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { loadEnvironmentVariables } from "./lib/load_env.js";
+import { registerGenerateScriptTool } from "./tools/generate_script.js";
 import { registerPingTool } from "./tools/ping.js";
 
 /**
@@ -12,6 +14,7 @@ function createServer() {
   });
 
   registerPingTool(server);
+  registerGenerateScriptTool(server);
 
   return server;
 }
@@ -20,6 +23,8 @@ function createServer() {
  * stdio transport로 MCP 서버를 연결해 클라이언트가 접속할 수 있게 한다.
  */
 async function main() {
+  loadEnvironmentVariables();
+
   const server = createServer();
   const transport = new StdioServerTransport();
 

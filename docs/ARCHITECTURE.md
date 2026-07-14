@@ -20,8 +20,12 @@
 
 <!-- 새 프로젝트 시작 시 이 구역의 항목을 초기화한다. -->
 - `package.json`: Node.js 실행 스크립트와 MCP SDK 의존성 정의
-- `src/server.js`: MCP 서버 생성, stdio transport 연결, 기본 tool 등록
+- `src/server.js`: MCP 서버 생성, stdio transport 연결, 등록된 MCP tool 연결
 - `src/tools/ping.js`: 서버 연결 확인용 `ping` tool 정의
+- `src/tools/generate_script.js`: 영상 주제를 받아 OpenAI 기반 장면 스크립트를 생성하는 `generate_script` tool 정의
+- `src/lib/load_env.js`: 프로젝트 루트 `.env` 파일을 읽어 런타임 환경 변수로 반영
+- `src/lib/openai_script_generator.js`: OpenAI Responses API 호출과 스크립트 응답 파싱 처리
+- `src/lib/save_script_result.js`: 생성된 스크립트 결과를 워크스페이스 루트 JSON 파일로 저장
 
 
 ## Tool 이름 원칙

@@ -1,6 +1,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { loadEnvironmentVariables } from "./lib/load_env.js";
+import { registerGenerateImageTool } from "./tools/generate_image.js";
 import { registerGenerateScriptTool } from "./tools/generate_script.js";
 import { registerPingTool } from "./tools/ping.js";
 
@@ -15,6 +16,7 @@ function createServer() {
 
   registerPingTool(server);
   registerGenerateScriptTool(server);
+  registerGenerateImageTool(server);
 
   return server;
 }

@@ -23,10 +23,12 @@
 - `src/server.js`: MCP 서버 생성, stdio transport 연결, 등록된 MCP tool 연결
 - `src/tools/ping.js`: 서버 연결 확인용 `ping` tool 정의
 - `src/tools/generate_script.js`: 영상 주제를 받아 OpenAI 기반 장면 스크립트를 생성하는 `generate_script` tool 정의
+- `src/tools/generate_image.js`: 이미지 프롬프트를 받아 OpenAI 기반 이미지를 생성하는 `generate_image` tool 정의
 - `src/lib/load_env.js`: 프로젝트 루트 `.env` 파일을 읽어 런타임 환경 변수로 반영
 - `src/lib/openai_script_generator.js`: OpenAI Responses API 호출과 스크립트 응답 파싱 처리
+- `src/lib/openai_image_generator.js`: OpenAI Image API 호출과 이미지 응답 파싱 처리
 - `src/lib/save_script_result.js`: 생성된 스크립트 결과를 워크스페이스 루트 JSON 파일로 저장
-
+- `src/lib/save_image_result.js`: 생성된 이미지를 워크스페이스 루트 PNG 파일로 저장
 
 ## Tool 이름 원칙
 

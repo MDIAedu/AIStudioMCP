@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { generateVideoScriptFromTopic } from "../lib/openai_script_generator.js";
+import { resolveWorkspaceRootPath } from "../lib/output_path.js";
 import { saveGeneratedScriptResult } from "../lib/save_script_result.js";
 
 const sceneSchema = z.object({
@@ -54,10 +55,14 @@ export function registerGenerateScriptTool(server) {
           signal: extra.signal,
         });
 
+        const workspaceRootPath = await resolveWorkspaceRootPath(extra);
         const savedFilePath = await saveGeneratedScriptResult({
-          topic: script.topic,
-          scenes: script.scenes,
-          model,
+          scriptResult: {
+            topic: script.topic,
+            scenes: script.scenes,
+            model,
+          },
+          workspaceRootPath,
         });
 
         const structuredContent = {

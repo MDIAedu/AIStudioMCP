@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { generateVoiceFromNarration } from "../lib/elevenlabs_voice_generator.js";
+import { resolveWorkspaceRootPath } from "../lib/output_path.js";
 import { saveGeneratedVoiceResult } from "../lib/save_voice_result.js";
 
 /**
@@ -65,10 +66,12 @@ export function registerGenerateVoiceTool(server) {
           signal: extra.signal,
         });
 
+        const workspaceRootPath = await resolveWorkspaceRootPath(extra);
         const savedFilePath = await saveGeneratedVoiceResult({
           audioBuffer: generatedVoice.audioBuffer,
           outputFormat: generatedVoice.outputFormat,
           sceneNumber: scene_number,
+          workspaceRootPath,
         });
 
         const structuredContent = {

@@ -1,19 +1,19 @@
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-const currentFilePath = fileURLToPath(import.meta.url);
-const currentDirectoryPath = path.dirname(currentFilePath);
-const projectRootPath = path.resolve(currentDirectoryPath, "../..");
+import { createOutputFilePath, createTimestampText } from "./output_path.js";
 
 /**
- * 생성된 영상을 워크스페이스 루트 파일로 저장한다.
+ * 생성된 영상을 output/video 폴더의 영상 파일로 저장한다.
  */
-export async function saveGeneratedVideoResult({ videoBuffer, contentType, videoUrl, sceneNumber }) {
+export async function saveGeneratedVideoResult({ videoBuffer, contentType, videoUrl, sceneNumber, workspaceRootPath }) {
   const fileExtension = getVideoFileExtension({ contentType, videoUrl });
   const sceneText = Number.isInteger(sceneNumber) ? `_scene_${sceneNumber}` : "";
   const fileName = `generated_video${sceneText}_${createTimestampText()}.${fileExtension}`;
-  const filePath = path.join(projectRootPath, fileName);
+  const filePath = await createOutputFilePath({
+    workspaceRootPath,
+    outputType: "video",
+    fileName,
+  });
 
   await writeFile(filePath, videoBuffer);
 
@@ -40,28 +40,4 @@ function getVideoFileExtension({ contentType, videoUrl }) {
   } catch {
     return "mp4";
   }
-}
-
-/**
- * 파일명에 넣을 안전한 타임스탬프 문자열을 만든다.
- */
-function createTimestampText() {
-  const now = new Date();
-
-  return [
-    now.getFullYear(),
-    padNumber(now.getMonth() + 1),
-    padNumber(now.getDate()),
-    "_",
-    padNumber(now.getHours()),
-    padNumber(now.getMinutes()),
-    padNumber(now.getSeconds()),
-  ].join("");
-}
-
-/**
- * 두 자리 숫자 텍스트로 맞춘다.
- */
-function padNumber(value) {
-  return String(value).padStart(2, "0");
 }

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { generateVideoFromPrompt } from "../lib/evolink_video_generator.js";
+import { resolveWorkspaceRootPath } from "../lib/output_path.js";
 import { saveGeneratedVideoResult } from "../lib/save_video_result.js";
 
 /**
@@ -96,11 +97,13 @@ export function registerGenerateVideoTool(server) {
           signal: extra.signal,
         });
 
+        const workspaceRootPath = await resolveWorkspaceRootPath(extra);
         const savedFilePath = await saveGeneratedVideoResult({
           videoBuffer: generatedVideo.videoBuffer,
           contentType: generatedVideo.contentType,
           videoUrl: generatedVideo.videoUrl,
           sceneNumber: scene_number,
+          workspaceRootPath,
         });
 
         const structuredContent = {

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { generateImageFromPrompt } from "../lib/openai_image_generator.js";
+import { resolveWorkspaceRootPath } from "../lib/output_path.js";
 import { saveGeneratedImageResult } from "../lib/save_image_result.js";
 
 /**
@@ -42,9 +43,11 @@ export function registerGenerateImageTool(server) {
           signal: extra.signal,
         });
 
+        const workspaceRootPath = await resolveWorkspaceRootPath(extra);
         const savedFilePath = await saveGeneratedImageResult({
           imageBase64: generatedImage.imageBase64,
           outputFormat: generatedImage.outputFormat,
+          workspaceRootPath,
         });
 
         const structuredContent = {

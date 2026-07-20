@@ -40,6 +40,6 @@
 - [x] `generate_voice` tool을 `scene_number`, `narration`, `voice_id` 값과 함께 호출했을 때 응답에 `narration`, `scene_number`, `voice_id`, `audio_base64`, `content_type`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
 - [x] `voice_id`를 생략하고 `ELEVENLABS_VOICE_ID`가 설정된 상태에서 `generate_voice` tool을 호출했을 때 음성이 생성되는지 확인한다.
 - [x] `generate_voice` tool 응답의 `audio_base64`를 base64로 디코딩했을 때 실제 오디오 파일로 재생되는지 확인한다.
-- [x] `generate_voice` tool을 호출했을 때 응답의 `saved_file_path` 경로에 음성 파일이 실제 생성되고, 재생할 수 있는지 확인한다.
+- [ ] `generate_voice` tool을 호출했을 때 응답의 `saved_file_path` 경로가 MCP workspace root의 `output/voice/` 하위 음성 파일이고, 재생할 수 있는지 확인한다.
 - [x] `ELEVENLABS_API_KEY`를 설정하지 않은 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
 - [x] `voice_id` 입력값과 `ELEVENLABS_VOICE_ID` 환경 변수가 모두 없는 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.

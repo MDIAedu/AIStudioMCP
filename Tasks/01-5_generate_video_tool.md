@@ -34,9 +34,9 @@
 - [x] 현재 task 문서가 실제 구현 기준으로 갱신됨
 
 ### 결과 확인 (구현 후 구체화)
-- [ ] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
-- [ ] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_video`가 노출되는지 확인한다.
-- [ ] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `scene_number`와 `video_prompt` 값을 복사한다.
-- [ ] `generate_video` tool을 `scene_number`, `video_prompt` 값과 함께 호출했을 때 응답에 `video_prompt`, `scene_number`, `task_id`, `status`, `video_url`, `content_type`, `duration`, `aspect_ratio`, `quality`, `sound`, `model`, `saved_file_path`가 포함되는지 확인한다.
-- [ ] `generate_video` tool 응답의 `saved_file_path` 경로에 영상 파일이 실제 생성되고, 재생할 수 있는지 확인한다.
-- [ ] `EVOLINK_API_KEY`를 설정하지 않은 상태에서 `generate_video` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
+- [x] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
+- [x] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_video`가 노출되는지 확인한다.
+- [x] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `scene_number`와 `video_prompt` 값을 복사한다.
+- [x] `generate_video` tool을 `scene_number`, `video_prompt` 값과 함께 호출했을 때 응답에 `video_prompt`, `scene_number`, `task_id`, `status`, `video_url`, `content_type`, `duration`, `aspect_ratio`, `quality`, `sound`, `model`, `saved_file_path`가 포함되는지 확인한다.
+- [ ] `generate_video` tool 응답의 `saved_file_path` 경로가 MCP workspace root의 `output/video/` 하위 영상 파일이고, 재생할 수 있는지 확인한다.
+- [x] `EVOLINK_API_KEY`를 설정하지 않은 상태에서 `generate_video` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.

@@ -8,7 +8,7 @@
 - [x] tool 호출 결과에 장면별 스크립트 구조가 포함된다.
 - [x] 각 장면에 장면 설명, 이미지 프롬프트, 영상 프롬프트, 나레이션이 모두 포함된다.
 - [x] OpenAI API를 사용해 스크립트를 생성한다.
-- [x] generate_script tool 실행 결과가 현재 워크스페이스에 JSON 파일로 저장된다.
+- [x] generate_script tool 실행 결과가 MCP workspace root의 `output/script/` 폴더에 JSON 파일로 저장된다.
 
 ## 범위 밖
 - 이미지 생성 tool 구현
@@ -35,5 +35,5 @@
 - [x] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
 - [x] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_script`가 노출되는지 확인한다.
 - [x] `generate_script` tool을 `topic` 값과 함께 호출했을 때 응답의 `scenes` 배열 각 항목에 `scene_description`, `image_prompt`, `video_prompt`, `narration`이 모두 포함되는지 확인한다.
-- [ ] `generate_script` tool을 호출했을 때 응답의 `saved_file_path` 경로에 JSON 파일이 실제 생성되고, 내용이 tool 응답과 같은지 확인한다.
+- [ ] `generate_script` tool을 호출했을 때 응답의 `saved_file_path` 경로가 MCP workspace root의 `output/script/` 하위 JSON 파일이고, 내용이 tool 응답과 같은지 확인한다.
 - [x] `OPENAI_API_KEY`를 설정하지 않은 상태에서 `generate_script` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.

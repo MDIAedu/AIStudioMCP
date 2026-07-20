@@ -8,7 +8,7 @@
 - [x] tool 호출 결과에 생성된 이미지 결과가 포함된다.
 - [x] OpenAI API를 사용해 이미지를 생성한다.
 - [x] 01-2 단계에서 생성된 스크립트의 이미지 프롬프트를 현재 단계 입력값으로 사용할 수 있다.
-- [x] generate_image tool 실행 결과가 현재 워크스페이스에 이미지 파일로 저장된다.
+- [x] generate_image tool 실행 결과가 MCP workspace root의 `output/image/` 폴더에 이미지 파일로 저장된다.
 
 ## 범위 밖
 - 스크립트 생성 직후 이미지 생성을 자동 연쇄 실행하는 기능
@@ -38,5 +38,5 @@
 - [x] `generate_image` tool을 `image_prompt` 값과 함께 호출했을 때 응답에 `image_prompt`, `image_base64`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
 - [x] `generate_image` tool을 호출했을 때 MCP inspector 또는 MCP 클라이언트에서 base64 문자열 대신 실제 이미지가 렌더링되어 보이는지 확인한다.
 - [x] `generate_image` tool 응답의 `image_base64`를 base64로 디코딩했을 때 실제 PNG 이미지로 열리는지 확인한다.
-- [x] `generate_image` tool을 호출했을 때 응답의 `saved_file_path` 경로에 이미지 파일이 실제 생성되고, 열 수 있는지 확인한다.
+- [ ] `generate_image` tool을 호출했을 때 응답의 `saved_file_path` 경로가 MCP workspace root의 `output/image/` 하위 이미지 파일이고, 열 수 있는지 확인한다.
 - [x] `OPENAI_API_KEY`를 설정하지 않은 상태에서 `generate_image` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.

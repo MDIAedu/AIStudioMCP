@@ -12,6 +12,7 @@
 
 - `docs/`: 하네스 문서와 작업 규칙
 - `Tasks/`: 개별 task 문서
+- MCP workspace root의 `output/`: 생성 결과 파일 저장 위치. 없으면 저장 시 자동 생성되며 `script/`, `image/`, `video/`, `voice/` 하위 폴더로 결과 타입을 구분한다.
 - `src/`: JavaScript 소스 코드
 - `src/tools/`: 개별 MCP tool 정의와 핸들러
 - `src/lib/`: 여러 tool이 공유하는 외부 AI API 연동, 공통 유틸 등의 로직
@@ -31,10 +32,11 @@
 - `src/lib/openai_image_generator.js`: OpenAI Image API 호출과 이미지 응답 파싱 처리
 - `src/lib/elevenlabs_voice_generator.js`: ElevenLabs Text to Speech API 호출과 음성 응답 파싱 처리
 - `src/lib/evolink_video_generator.js`: EvoLink.AI Kling 영상 생성 task 생성, 상태 조회, 완료 영상 다운로드 처리
-- `src/lib/save_script_result.js`: 생성된 스크립트 결과를 워크스페이스 루트 JSON 파일로 저장
-- `src/lib/save_image_result.js`: 생성된 이미지를 워크스페이스 루트 PNG 파일로 저장
-- `src/lib/save_voice_result.js`: 생성된 음성을 워크스페이스 루트 오디오 파일로 저장
-- `src/lib/save_video_result.js`: 생성된 영상을 워크스페이스 루트 영상 파일로 저장
+- `src/lib/output_path.js`: MCP workspace root 확인, `output/` 하위 타입별 폴더 생성, 결과 파일 경로 생성 처리
+- `src/lib/save_script_result.js`: 생성된 스크립트 결과를 MCP workspace root의 `output/script/` JSON 파일로 저장
+- `src/lib/save_image_result.js`: 생성된 이미지를 MCP workspace root의 `output/image/` PNG 파일로 저장
+- `src/lib/save_voice_result.js`: 생성된 음성을 MCP workspace root의 `output/voice/` 오디오 파일로 저장
+- `src/lib/save_video_result.js`: 생성된 영상을 MCP workspace root의 `output/video/` 영상 파일로 저장
 
 ## Tool 이름 원칙
 

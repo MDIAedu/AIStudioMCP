@@ -34,12 +34,12 @@
 - [x] 현재 task 문서가 실제 구현 기준으로 갱신됨
 
 ### 결과 확인 (구현 후 구체화)
-- [ ] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
-- [ ] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_voice`가 노출되는지 확인한다.
-- [ ] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `scene_number`와 `narration` 값을 복사한다.
-- [ ] `generate_voice` tool을 `scene_number`, `narration`, `voice_id` 값과 함께 호출했을 때 응답에 `narration`, `scene_number`, `voice_id`, `audio_base64`, `content_type`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
-- [ ] `voice_id`를 생략하고 `ELEVENLABS_VOICE_ID`가 설정된 상태에서 `generate_voice` tool을 호출했을 때 음성이 생성되는지 확인한다.
-- [ ] `generate_voice` tool 응답의 `audio_base64`를 base64로 디코딩했을 때 실제 오디오 파일로 재생되는지 확인한다.
-- [ ] `generate_voice` tool을 호출했을 때 응답의 `saved_file_path` 경로에 음성 파일이 실제 생성되고, 재생할 수 있는지 확인한다.
-- [ ] `ELEVENLABS_API_KEY`를 설정하지 않은 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
-- [ ] `voice_id` 입력값과 `ELEVENLABS_VOICE_ID` 환경 변수가 모두 없는 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
+- [x] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
+- [x] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_voice`가 노출되는지 확인한다.
+- [x] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `scene_number`와 `narration` 값을 복사한다.
+- [x] `generate_voice` tool을 `scene_number`, `narration`, `voice_id` 값과 함께 호출했을 때 응답에 `narration`, `scene_number`, `voice_id`, `audio_base64`, `content_type`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
+- [x] `voice_id`를 생략하고 `ELEVENLABS_VOICE_ID`가 설정된 상태에서 `generate_voice` tool을 호출했을 때 음성이 생성되는지 확인한다.
+- [x] `generate_voice` tool 응답의 `audio_base64`를 base64로 디코딩했을 때 실제 오디오 파일로 재생되는지 확인한다.
+- [x] `generate_voice` tool을 호출했을 때 응답의 `saved_file_path` 경로에 음성 파일이 실제 생성되고, 재생할 수 있는지 확인한다.
+- [x] `ELEVENLABS_API_KEY`를 설정하지 않은 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
+- [x] `voice_id` 입력값과 `ELEVENLABS_VOICE_ID` 환경 변수가 모두 없는 상태에서 `generate_voice` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.

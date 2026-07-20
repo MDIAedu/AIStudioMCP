@@ -9,7 +9,7 @@
 | --- | --- | --- | --- |
 | 01-1 | [Tasks/01-1_mcp_server_skeleton.md](../Tasks/01-1_mcp_server_skeleton.md) | Node.js와 `@modelcontextprotocol/sdk` 기반 MCP 서버를 실행하고, 클라이언트 연결 및 서버 기동 확인용 최소 tool 1개를 노출한다. | 완료 |
 | 01-2 | [Tasks/01-2_generate_script_tool.md](../Tasks/01-2_generate_script_tool.md) | 영상 주제를 입력받아 장면 설명, 이미지 프롬프트, 영상 프롬프트, 나레이션으로 구성된 장면별 스크립트를 생성하는 OpenAI 기반 tool 1개를 추가한다. | 완료 |
-| 01-3 | [Tasks/01-3_generate_image_tool.md](../Tasks/01-3_generate_image_tool.md) | 01-2에서 얻은 이미지 프롬프트를 입력받아 OpenAI API로 이미지를 생성하는 MCP tool 1개를 추가한다. | 진행중 |
+| 01-3 | [Tasks/01-3_generate_image_tool.md](../Tasks/01-3_generate_image_tool.md) | 01-2에서 얻은 이미지 프롬프트를 입력받아 OpenAI API로 이미지를 생성하는 MCP tool 1개를 추가한다. | 완료 |
 
 
 ## 상태 범례

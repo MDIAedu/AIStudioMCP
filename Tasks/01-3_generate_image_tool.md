@@ -32,11 +32,11 @@
 - [x] 현재 task 문서가 실제 구현 기준으로 갱신됨
 
 ### 결과 확인 (구현 후 구체화)
-- [ ] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
-- [ ] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_image`가 노출되는지 확인한다.
-- [ ] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `image_prompt` 값을 복사한다.
-- [ ] `generate_image` tool을 `image_prompt` 값과 함께 호출했을 때 응답에 `image_prompt`, `image_base64`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
-- [ ] `generate_image` tool을 호출했을 때 MCP inspector 또는 MCP 클라이언트에서 base64 문자열 대신 실제 이미지가 렌더링되어 보이는지 확인한다.
-- [ ] `generate_image` tool 응답의 `image_base64`를 base64로 디코딩했을 때 실제 PNG 이미지로 열리는지 확인한다.
-- [ ] `generate_image` tool을 호출했을 때 응답의 `saved_file_path` 경로에 이미지 파일이 실제 생성되고, 열 수 있는지 확인한다.
-- [ ] `OPENAI_API_KEY`를 설정하지 않은 상태에서 `generate_image` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
+- [x] 프로젝트 루트에서 `npm start`로 MCP 서버를 실행한다.
+- [x] MCP inspector 또는 MCP 클라이언트에서 tool 목록에 `generate_image`가 노출되는지 확인한다.
+- [x] `generate_script` tool을 호출해 얻은 `scenes` 배열 항목의 `image_prompt` 값을 복사한다.
+- [x] `generate_image` tool을 `image_prompt` 값과 함께 호출했을 때 응답에 `image_prompt`, `image_base64`, `output_format`, `model`, `saved_file_path`가 포함되는지 확인한다.
+- [x] `generate_image` tool을 호출했을 때 MCP inspector 또는 MCP 클라이언트에서 base64 문자열 대신 실제 이미지가 렌더링되어 보이는지 확인한다.
+- [x] `generate_image` tool 응답의 `image_base64`를 base64로 디코딩했을 때 실제 PNG 이미지로 열리는지 확인한다.
+- [x] `generate_image` tool을 호출했을 때 응답의 `saved_file_path` 경로에 이미지 파일이 실제 생성되고, 열 수 있는지 확인한다.
+- [x] `OPENAI_API_KEY`를 설정하지 않은 상태에서 `generate_image` tool을 호출했을 때 원인이 드러나는 에러 메시지가 반환되는지 확인한다.
